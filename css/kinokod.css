@@ -30,6 +30,14 @@ canvas.w {
 	z-index: 1;	
 }
 
+canvas.l {
+	/*legend: gives infor on the video, let it sit on top of the video*/
+	position: absolute;
+	left: 500px;
+	top: 200px;
+	z-index: 5;	
+}
+
 iframe.vimvid {
 
 	position: absolute;
@@ -56,6 +64,7 @@ iframe.vimvid {
 	height: 700px;
 	background-image: url("../images/text_window.jpg");
 	background-repeat: no-repeat;
+	z-index: 2;
 }
 /* Middle column */
 .column.middle {
@@ -87,6 +96,7 @@ img.c {
 	position: fixed;
 	left: 120px;
 	top: 0px;
+	z-index: 3;
 }
 img.b {
 	/* application manager */
@@ -96,7 +106,7 @@ img.b {
 	right: 20px;
 	top: 10px;
 	opacity: 0.9;
-	z-index: 3;
+	z-index: 0;
 }
 img.d {
 	/* calculator */
@@ -107,17 +117,27 @@ img.d {
 	z-index: 3;
 }
 
+img.porn {
+
+	 /* -webkit-filter: grayscale(100%);*/ /* Safari 6.0 - 9.0 */
+    /*filter: grayscale(20%);*/
+    filter: hue-rotate(100deg);
+}
+
 @media only screen and (max-width: 1000px) {
 	img.d {visibility: hidden;}
 	img.b {visibility: hidden;}
+	canvas.w {visibility: hidden;}
 	iframe.vimvid {
 		left: 20px;
 		top: 150px;
 	}
+	/*
 	canvas.w {
 		left: 20px;
 		top: 250px;
-	}
+		
+	}*/
 }
 
 .text_column {

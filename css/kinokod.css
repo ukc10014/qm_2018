@@ -56,7 +56,7 @@ iframe.vimvid {
 .column {
 	float: left;
 	padding: 10px;
-	width: 45%
+	/*width: 45%*/
 }
 /* Left and right column */
 .column.side {
@@ -68,7 +68,7 @@ iframe.vimvid {
 }
 /* Middle column */
 .column.middle {
-	width: 40%;
+	width: 10%;
 }
 /* Clear floats after the columns */
 .row:after {

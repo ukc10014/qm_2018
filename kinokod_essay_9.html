@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- Lightbox2 used under MIT License, from Lokesh Dhakar www.https://lokeshdhakar.com/projects/lightbox2/#license -->
+<html lang="en">
+	<head>
+	<title>CSS Template</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+@import url("css/kinokod.css");
+	/* @import url("scripts/lightbox.css") */
+</style>
+	<link href="css/lightbox.css" rel="stylesheet" >
+	<script type="text/javascript" src="processing.js"></script>
+	<script src="https://player.vimeo.com/api/player.js"></script>
+
+	<script>
+	  /* On click, launch the canvas with USSR flag */
+	  
+	  function launch_backg(id) {
+		  
+		  var c = document.getElementById(id);
+		  //c.style.display="block";
+		  c.style.display = "block";
+		  //alert("launch_backg "+c.style.display)	  
+		  var pjs = Processing.getInstanceById(id);
+		 	
+		  console.log(Processing.instances[0]);
+		  pjs.set_flag(1); //Sets display flag after which point the ussr flag animation starts
+		  
+		  
+	  }
+	</script>
+	</head>
+	<body>
+<!--- Pre-load images -->
+<div class="hidden"> 
+      <script type="application/javascript">
+	
+	 
+	  
+		/* Test function to change colour within page */
+		function change_colour() {
+			//alert("change_colour");
+			var color1=getRandomColor();
+			var color2=getRandomColor();
+//			document.getElementById("clicktest").style.backgroundColor=getRandomColor();
+			document.getElementById("clicktest").style.backgroundImage=`linear-gradient(to right,${color1},${color2})`;
+			document.getElementById("clicktest2").style.backgroundImage=`linear-gradient(to right,${color1},${color2})`;
+			document.getElementById("clicktest3").style.backgroundImage=`linear-gradient(to right,${color1},${color2})`;
+		}
+			
+		function getRandomColor() {
+  			var letters = '0123456789ABCDEF';
+  			var color = '#';
+  			for (var i = 0; i < 6; i++) {
+    			color += letters[Math.floor(Math.random() * 16)];
+  				}
+			return color;
+}
+	</script> 
+      
+      <!-- what we use to interrupt a sketch --> 
+      <script type="application/javascript">
+		function stop_sketch() {
+			
+			var processingInstance;
+			processingInstance = Processing.getInstanceById('500eur');
+			processingInstance.exit();
+			
+		}
+	</script> 
+      <script type="text/javascript">
+		<!--//--><![CDATA[//><!-- */
+			var images = new Array()
+		
+		/*Preloads the images*/
+		function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+					/* document.getElementById("imgs"+i).innerHTML = images[i]; */
+				}
+			}
+		
+		/*Pulls the images*/
+		function retrieve(inum) {
+				/*	document.getElementById("imgs"+inum).innerHTML = images[inum]; */
+				document.getElementById('imgs'+inum).src = images[inum].src;
+		}
+		
+		function img_num() {
+			/* Returns size of preload array */
+			return images.length;
+		}
+			preload(
+				"images/xwindows.jpg",
+				"images/cde_files.jpg",
+				"images/cde_xcalc.jpg",
+				"images/cde_menu.jpg",
+				"images/shots/soviet_montage_vertov.png",
+				"images/shots/conway.jpg",
+				"images/shots/giscard.jpg",
+				"images/shots/runit_gregnelson.jpg",
+				"images/shots/derrida_noapocalypse.png",
+				"images/shots/soylent.jpg",
+				"images/shots/derrida_noapocalypse.png",
+				"images/shots/maxplanck_3.png",
+				"images/shots/maxplanck_2.png",
+				"images/shots/maxplanck_1.png",
+				"images/shots/marienbad.jpg",
+				"images/shots/commie_hysteria.jpg",
+				"images/shots/federal_mortgage_timeline.png",
+				"images/shots/gi_bill_30yr_mortgage.png",
+				"images/shots/fannie_freddie_derivatives.png",
+				"images/shots/mortgage_intl_comps.png",
+				"images/shots/houses.jpg",
+				"images/shots/cmo_prepayment.png",
+				"images/shots/hardt_empire.png",
+				"images/shots/hardt_empire_2.png",
+				"images/shots/nyc_segregation.jpg",
+				"images/shots/nyc_segregation3.jpg",
+				"images/shots/aldomoro.jpg",
+				"images/shots/rossing.jpg",
+				"images/shots/apocalypse_utopia.png",
+				"images/shots/algeria-dummies.jpg",
+				"images/shots/casa_malaparte_parisfaitsoncinema.jpg",
+				"images/shots/holderin_ister_davidconstantine.jpg",
+				"images/shots/tsunami_stone_nytimes.jpg",
+				"images/shots/question_tech.jpg"		
+			)
+		//--><!]]>
+	</script> 
+    </div>
+	
+
+<div class="header" id="clicktest"> <a href="http://ukc10014.org"><img class="a" id="imgs0" src="" width="126" height="90" alt="HOME"></a> <img class="b" id="imgs1" src="" width="663" height="377" alt=""> <img class="d" id="imgs2" src="" width="309" height="466" alt=""> <img class="c" id="imgs3" src="" width="657" height="132" alt=""  usemap="#sty_mgr" > <br>
+      <div id="500eur_container"> 
+    <!-- <input type="textfield" id="display_backg" value="0"> -->
+    <canvas id="500eur" class="backg" data-processing-sources="ssr_seals_1/ssr_seals_1.pde" >blah blah</canvas>
+  </div>
+    </div>
+<div class="row" id="clicktest2"> 
+      
+      <!-- triggers for various actions -->
+      <map name="sty_mgr">
+    <area shape="rect" coords="0,60,64,124" href="#" onclick="change_colour()" alt="gradients">
+    <area shape="rect" coords="150,60,214,124" href="#" onclick="launch_backg('500eur')" alt="republics">
+    <area shape="rect" coords="230,60,294,124" href="#" onclick="text_rect()" alt="tenderness">
+    <area shape="rect" coords="430,60,494,124" href="#" onclick="launch_vid()" alt="exorbitant_privilege">
+  </map>
+      
+      <!-- This is the image popup -->
+      <div class="show">
+    <div class="overlay"></div>
+    <div class="img-show"> <span>X</span> <img src="" alt="X"> </div>
+  </div>
+      <div class="column side"> <br>
+    <h1 class="title">Exorbitant Privilege</h1>
+    <p class="text_column"> <br>
+          <br>
+          The essay-film seeks to tread a line between surrealist experiment and polemicised didacticism <a href="images/shots/soviet_montage_vertov.png" data-lightbox="imgs2" data-title="Vertov's Soviet Montage"><img src="images/shots/soviet_montage_vertov.png" width="20" height="20" alt="British Film Institute on the Essay Film"/></a> . Yet where does the visual essay stand in an era of omni-present collage, of propagandised media that is increasingly democratised in its production, and of a drastic blurring of lines, already soft, between fact and fiction <!-- <olink class="popup"><img id="imgs5" src="images/xwindows.jpg" alt="Kellyanne Conway and Alternative Facts"/></olink> --> <a href="images/shots/conway.jpg" data-lightbox="imgs5" data-title="Kellyanne Conway and Alternative Facts">1</a> Moreover, in a time when media content is less-often consumed in a spatial or temporal commons (the cinema or broadcast television), the very premise of mass-media as shared experience is all but obliterated.  Perhaps the essay film, which has historically resisted formal boundaries<a href="#bfi">3</a>, today must breach the borders of the projection booth - into physical space and online, reflecting the life-world the viewer inhabits. <br>
+          <br>
+          'Exorbitant Privilege' <a href="images/shots/giscard.jpg" data-lightbox="imgs6"  data-title="Valery Giscard d'Estaing" >4</a> asserts that ‘homo hydrogenesis’ <a data-lightbox="imgs7" href="images/shots/runit_gregnelson.jpg" data-title="Runit Dome"></a> descended from one in the shadow of an ever-imminent, instantaneous fiery annihilation to victim and perpetrator of a more-or-less slow, actual, asphyxiative extinction. The nuclear eschaton (defined as a global apocalypse as opposed to the events of August 1945, which, for their horror, were fundamentally localised) was hypothetical and literary <a data-lightbox="imgs8" href="images/xwindows.jpg" data-title="Derrida: No Apocalypse (Not Now)..."></a> .  Its threat, horrifying and seductive, has been, after the Cold War's end, joined by a real-time experiment in terraforming7 - the bleak results of which come in every year with extreme weather and calving glaciers. We live as if suspended between an antediluvian present and a sweltering, parched near-future <a data-lightbox="imgs9" href="images/xwindows.jpg" data-title="Soylent Green"></a> .<br>
+          <br>
+          This threat-transformation resulted from a virulent, politicised consumer capitalism, initiated in the US but quickly replicated, albeit at smaller scale, <a href="#green_wachter">11</a> <a data-lightbox="imgs11" href="images/xwindows.jpg" data-title="Max-Planck-Institut"> 11.1</a> <a data-lightbox="imgs12" href="images/xwindows.jpg" data-title="Max-Planck-Institut"> 11.2</a> . Consumption as patriotic duty in turn was rooted in an obsession with the home, a product both of conscious government policy <a data-lightbox="imgs13" href="images/xwindows.jpg" data-title="Tract housing"> 11.3</a> and of anti-Communist hysteria <a href="#zinn">12</a> <a data-lightbox="imgs14" href="images/xwindows.jpg" data-title="It Can Happen Here">12.1</a> .<br>
+          <br>
+          Houses and consumption were not necessarily a historically and geographically inevitable phenomenon, as if programmed by a benevolent, neoliberal Providence<a href="">13</a>. Rather, these were the product of an intentional public policy - starting in the post-Depression America <a href="#green_wachter">14</a> <a data-lightbox="imgs15" href="images/xwindows.jpg" data-title="Green Wachter on Federal Housing Policy">14.1</a> , continuing after WWII with an alphabet soup - Fannie Mae, Ginnie Mae and Freddie Mac - of ‘government sponsored enterprises’ which existed in a twilight zone of implied government guarantees <a data-lightbox="imgs17" href="images/xwindows.jpg" data-title="Green Wachter on Federal Housing Policy">15</a> . Political imperatives in favour of housing were visibly exemplified in 1970s with the 30-year fixed-rate repayable mortgage, arguably the ground zero of modern political economy.  Such a long-dated, fixed-rate mortgage is an aberration4. More odd even is the home-owner’s right to prepay for free <a data-lightbox="imgs16" href="images/xwindows.jpg" data-title="Green Wachter on Federal Housing Policy">16</a> .<br>
+          Why do we dwell upon an arcane financial instrument? Because the complexity of ascribing a value to this option contributed to a demand for technologists, a need that fortuitously could be filled from the military-academic-industrial complex, then downsizing at the Cold War’s end. These scientists, literally rocket scientists, would use techniques such as Monte Carlo simulation <a data-lightbox="imgs20" href="images/shots/marienbad.jpg" data-title="Last Year in Marienbad">20</a> , originally developed to model behaviour of neutrons inside a nuclear weapon<a href="#metropolis">21</a>, to work out how much a mortgage-backed-security was worth <a data-lightbox="imgs21" href="images/shots/cmo_prepayment.png" data-title="CMO Prepayment">21.1</a> . The vast size of the mortgage market in turn spurred in turn new markets, such as those for securitisation of auto loans \& student debt. The story of how this financial hypertrophy would end is written in the post-Lehman histories. Yet it remains the case that the obsession with homeownership lay in the political imperatives of American, and to a lesser extent, Anglophone <a data-lightbox="imgs10" href="images/shots/maxplanck_1.png" data-title="Max-Planck-Institut"></a> , governments seeking alternatives to communism6 and, to a certain extent, any form of activist, progress social organisation<a href="">24</a>.<br>
+          <br>
+          The antecedents were benign enough - America was a vast country of frontiers<a href="#suburbs">26</a> and open land, the native population of which had been cast in the popular imagination (of so many Westerns) as a barbaric <a data-lightbox="imgs22" href="images/shots/hardt_empire_2.png" data-title="Hardt and Negri, Empire">27</a> <a data-lightbox="imgs23" href="images/shots/hardt_empire.png" data-title="Hardt and Negri, Empire">28</a> , recalling the Greek view of the Persians <a>28</a> , threat to be exterminated. The associated homestead mentality had little use for the ancient walled towns <a>29</a> , the shtetl, or the monsoon-drenched rice paddies of the East. The good American immigrant aspired to the suburbs, a frame house, a green lawn of appreciable extent, two cars of recent vintage, perhaps a proud flag <a>30</a> , all of which semiotically presented an image of fulfilled dream.<br>
+          <br>
+          Yet, as is well documented, the good house would come to represent an instrument of white flight, suburban sprawl, extreme racial segregation, and an individualised hyper-mobility, at the expense of commons <a data-lightbox="imgs24" href="images/shots/nyc_segregation3.jpg" data-title="Segregation in New York City">31</a> <a data-lightbox="imgs25" href="images/shots/nyc_segregation.jpg" data-title="Segregation in New York City">31.1</a> . <br>
+          Thus, a nation whose foundation myth definitionally excluded the autochthonous, sought, through the suburban tract and the products that filled it and surrounded it, to establish an abode in which it was authentically at home. Yet, in 2018 when the Cold War is a memory, we must recall that this process happened against a global backdrop of annihilation, at the hands of a weapon the extreme efficacy of which all but negated its practical usability. Rather the fight of ideologies, and indeed utopias <a data-lightbox="imgs28" href="images/shots/apocalypse_utopia.png" data-title="Competing Utopias">32</a> , would be one of attrition, and would happen by proxy, in three forms <a href="#hardt">33</a> : overtly violent <a data-lightbox="imgs26" href="images/shots/aldomoro.jpg" data-title="Death of Aldo Moro">34</a> , (often covertly) financial-political <a href="">35</a> , and through the creation of a mediated network culture <a href="">36</a> . After all, the American dream, as observed worldwide, was a dream lived in the aether. Images and sounds of prosperous consumption would lead the West & increasingly the East onto the sunny uplands of globalisation and capitalism. Only in the new millenium would the environmental cost of this development become fully apparent.<br>
+          <br>
+          And it is here we must return to autochthony, but under the bitter tailings of nuclear colonialism. For nuclearity was not merely a phenomenon that gripped the declared atomic powers, with Europe as a reluctant victim-stroke-handmaiden <a href="">37</a> . Nor was it something that can be theorised in the neutral, distanced language of economics or Cold War studies. For ‘homo hydrogenesis’ needed tools, designed by those who, in varying ways and for various reasons, had transcended or rejected notions of home, soil, blood. These tools needed to be tested, just not in ‘populated’ areas: Iowa, Wales, the Donbas, or Clermont-Ferrand. Rather it was ‘uninhabited’ and ‘unsettled’ sites, the Marshall Islands, Algeria, French Polynesia, Western Australia, Kazakhstan <a data-lightbox="imgs29" href="images/shots/algeria-dummies.jpg" data-title="French Test Site at Reggane">38</a> . Correspondingly, the raw material of nuclearity, principally uranium ore, was mined and refined into yellowcake in Gabon, South Africa, Namibia, Niger, Kazakhstan again <a href="#hecht">39</a><a data-lightbox="imgs27" href="images/shots/rossing.jpg" data-title="Worker at Rossing Mine, Namibia"></a> . These activities, while mostly invisible to viewers in the homeland, were hardly without human cost - in immediate irradiation <a href="">40</a> , long-term health, chromosomal mutation <a href="">41</a> .  Moreover, to the extent that affected people often lived off the land and the sea, their food supplies would become more precarious <a href="">42</a> . It is in this sense that technology, always under the control of political beings often in thrall to its potential, performed its supreme act of alienation - a life in harmony with land and sea would henceforth be replaced with a relationship to aid money, pre-packaged commodities, and ultimately, forced and economic migration7. <a data-lightbox="imgs33" href="images/xwindows.jpg" data-title="Martin Heidegger, The Question Concerning Technology">43</a> .<br>
+          <br>
+          It is worth noting that nuclear war had a certain non-discriminatory appeal - very few could, merely by virtue of location, ethnicity, or nationality, guarantee survival in a post-WWIII world <a data-lightbox="imgs30" href="images/shots/casa_malaparte_parisfaitsoncinema.jpg" data-title="Casa Malaparte, Le Mepris">44</a> . In contrast, the after-effects of consumerism and environmental collapse exhibit a notable distributional feature - the earliest victims live on the low-lying islets of the southern sea. The poetics of this tragedy seem inextricably bound with the fluidity and vitality of water --  perhaps the Ister <a href="#bib">45</a> <a data-lightbox="imgs31" href="images/shots/holderin_ister_davidconstantine.jpg" data-title="Holderin The Ister"></a> , protagonist of Hölderin’s hymn, or the great Vourokasha sea of the Avestan texts <a data-lightbox="imgs32" href="images/shots/tsunami_stone_nytimes.jpg" data-title="NY Times: Tsunami marker">46</a> . <br>
+          <br>
+          <br>
+          <br>
+          <a id="bib">BIBLIOGRAPHY</a> <br>
+          <br>
+          <br>
+          <br>
+          <a id="green_wachter">Richard K. Green and Susan M. Wachter, The American Mortgage in Historical and International Context, in Journal of Economic Perspectives, Vol 19, No. 4, Fall 2005, pp 93-114.</a> <br>
+          <br>
+          <a id="zinn"></a>Zinn, Howard A People's History of the United States Longman Group (UK) Ltd, London and New York 1980. Pages 417-422, 428-434 <br>
+          <br>
+          <a id="metropolis"></a>Francis H. Harlow and N. Metropolis, Computing and Computers: Weapons Simulation Leads to the Computer Era, in Los Alamos Science, Winter/Spring 1983, pp 132-141 <br>
+          <br>
+          <a id="uk_home"></a>Tristram Hunt, How the English Became Obsessed With Property, in New Statesman, 2 February 2004,
+          https://www.newstatesman.com/node/194947,  accessed October 2018. <br>
+          <br>
+          <a id="thatcher"></a>Rowan Moore, Margaret Thatcher began Britain's obsession with poperty. It's time to end it, The Guardian, 5 April 2014, https://www.theguardian.com/society/2014/apr/06/margaret-thatcher-britains-obsession-property-right-to-buy, accessed October 2018. <br>
+          <br>
+          <a id="aussie_home"></a>Allon, Fiona. Renovation Nation: Our Obsession with Home, New South Wales Press Ltd, Sydney 2008, p. 52, 67. <br>
+          <br>
+          <a id="suburbs"></a>Peter O. Muller, The Evolution of American Suburbs: A Geographical Interpretation, in Urbanism Past & Present, No. 4 (Summer 1977), pp. 1-10, https://www.jstor.org/stable/44403537 <br>
+          <br>
+          <a id="hardt"></a>Hardt, Michael and Negri, Antonio. Empire, Harvard University Press, Cambridge and London, 2000, pp. 169-171, 345-348. <br>
+          <br>
+          <a id="steiner"></a>Steiner, George. The Idea of Europe, Overlook Duckworth, Peter Mayer Publishers, Inc., New York and London 2015. <br>
+          <br>
+          <a id="max_planck"></a>Sebastian Kohl, A Small History of the Homeownership Idea, in Discussion Paper 18/6 Max-Planck-Institut für Gesellschaftsforchung, June 2018. <br>
+          <br>
+          <a id="utopia"></a>Derek Maus, Series and Systems: Russian and American Dystopian Satires of the Cold War, in Critical Survey: Representations of Dystopia in Literature and Film, Vol. 17, No. 1, 2005, pp. 72-94, https://www.jstor.org/stable/41556095 , accessed October 2018. <br>
+          <br>
+          <a id="liars_poker"></a>Lewis, Michael. Liar's Poker, W.W. Norton and Company, London 1989. <br>
+          <br>
+          <a id="bfi"></a>Tracy, Vincendeau, McGahan, et al. The essay film at British Film Institute Sight and Sound Magazine, August 2013, https://www.bfi.org.uk/news-opinion/sight-sound-magazine/features/deep-focus/essay-film , accessed October 2018. <br>
+          <br>
+          <a id="heidegger"></a>Heidegger, Martin. The Question Concerning Technology, tr. William Lovitt, Harper Torchbooks, New York, London, et al. 1977. <br>
+          <br>
+          <a id="hecht">Hecht, Gabrielle. Being Nuclear: Africans and the Global Uranium Trade. MIT Press, Cambridge and London 2014.</a> <br>
+          Constantine, David. Friedrich Hölderin: Selected Poems. Bloodaxe Books Ltd., Newcastle-upon-Tyne 1996, pp. 62-63. </p>
+	  </div>
+		<div class="column middle"> 
+			<div id="vimvid_c" class="video" data-start-time="5">
+		</div>
+			<canvas id="wordsCanvas" class="w" width="2000" height="1000">Your browser does not support the 'canvas' element.</canvas>
+		</div>
+    </div>
+<div class="footer" id="clicktest3"> <img src="images/cde_dock.jpg" width="1055" height="95" alt=""> </div>
+
+<!-- Scripts --> 
+
+<script type="text/javascript">
+// When the user clicks on div, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+
+			</script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script>
+	$(function () {
+    "use strict";
+    
+    $(".popup img").click(function () {
+        var $src = $(this).attr("src");
+	
+        $(".show").fadeIn();
+        $(".img-show img").attr("src", $src);
+	
+    });
+    
+    $("span, .overlay").click(function () {
+        $(".show").fadeOut();
+    });
+    
+});
+	</script> 
+<script type="text/javascript">
+		/*This script pulls all the images up which are then referenced through the document as id="imgs0-45"*/
+		for (j=0;img_num();j++) {
+			// console.log(j);
+			retrieve(j);
+		}
+		</script> 
+<script src="scripts/lightbox-plus-jquery.min.js"></script> 
+<script>
+function text_rect() {
+	var c = document.getElementById("wordsCanvas");
+	var codenames = ["agate","apache","dakota","romeo","bravo","cherokee","item","aztec","zuni","betelgeuse","rigel","sirius","altair","antares","arcturus","capella","canopus","aldebaran","tamoure","ganymede","castor","pollux","canopus","procyon","andromede","cassiopee","dragon","eridan","licorne","pegase","orion","toucan","flagpole","grappler","antler","mosaic","gerboise","giacint","ivy","kapustnik","laska","kuryer","lyagushka","marya","mohawk","frigate bird","aztec","harlem","orange","checkmate","starfish","molodets","shrimp","sunset","solntsepyok","swordfish","bluegill","kingfish","topol","tyulpan","ulyibka","zhuravlik"];
+	var ctx = c.getContext("2d");
+
+	// Create gradient
+	/*		
+	var grd = ctx.createLinearGradient(0,0,200,0);
+	grd.addColorStop(0,"red");
+	grd.addColorStop(1,"white");
+	// Fill with gradient
+	ctx.fillStyle = grd;
+	ctx.fillRect(0,0,1500,800);
+	*/
+	
+	ctx.font = "100px Futura";
+	ctx.fillStyle = "white";
+	ctx.textAlign="center"
+	ctx.fillText(codenames[getRndInteger(0,codenames.length-1)],getRndInteger(20,c.width*0.9),getRndInteger(20,c.height*0.9));
+			//alert("script c"+c+" "+ctx);
+
+		}
+
+	function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}	
+	</script>
+
+<script>
+	function launch_vid() {
+		/*Kill the processing sketch as it all eats too much power*/
+		stop_sketch();
+
+		/*Get seconds for button push to decide which video to play*/
+		var d = new Date();
+		var ns = d.getSeconds();
+		var el = ''; //Embed link
+		var v = document.getElementById("vimvid_c");
+		var start_t,end_t; //Start & end times
+
+		if (ns<5)	{
+				el = 'https://player.vimeo.com/video/296441981'; //alfa_noir
+				start_t = 0;
+			} else if (ns>=5 && ns<14) {
+				el = 'https://player.vimeo.com/video/296439263'; //bravo_bleue
+				start_t = 120; //bleue can start anytime in first 2 mins
+			} else if (ns>=14 && ns<20) {
+				el = 'https://player.vimeo.com/video/296487881'; //charlie_verte
+				start_t = 240; //verte in first 4 minutes
+			} else if (ns>=20 && ns<35) {
+				el = 'https://player.vimeo.com/video/296485222'; //delta_rouge
+				start_t = 360; //rouge in first 6 minutes
+			} else if (ns>=35 && ns<55) {
+				el = 'https://player.vimeo.com/video/296482578'; //echo_blanc
+				start_t = 60; //blanc in first 1 minute
+			} else {
+				el = 'https://player.vimeo.com/video/296482344'; //foxtrot_credits
+				start_t = 0;
+			}
+
+			end_t = start_t + 60; //never play more than 1 minute
+
+			/*Build the innerHTML with the vimeo link seleecged above*/
+			v.innerHTML = "<iframe src=" + el + " class='vimvid' width='640' height='360' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";
+
+			/*Bind a Vimeo player so we can pick where to play from*/
+			var iframe = document.querySelector('iframe');
+			var player = new Vimeo.Player(iframe);
+			var vs = start_t;
+			var pause = false;
+
+			player.on('play',function() {
+
+				if (!pause)
+					player.setCurrentTime(vs);
+			});
+
+			player.on('pause',function() {
+
+				pause = true;
+			});
+
+			player.on('timeupdate',function(data) {
+				if (data.seconds >= end_t) {
+					player.destroy();
+				}
+
+			});
+
+		}
+
+
+
+
+	
+</script>
+
+</body>
+</html>

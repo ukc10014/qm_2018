@@ -1,0 +1,252 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: Courier, Times, serif;
+	background-color: #4993A7	
+	}
+/* Style the header */
+
+/* Area we're changing colour of */
+#clicktest{background-color: #4993A7;}
+
+canvas.backg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -99;
+	display: none;
+
+}
+
+canvas.w {
+	position: absolute;
+	left: 500px;
+	top: 200px;
+	z-index: 0;	
+}
+
+iframe.vimvid {
+
+	position: absolute;
+	left: 500px;
+	top: 200px;
+	z-index: 3;
+}
+
+.header {
+	padding: 50px;
+	text-align: center;
+	font-size: 35px;
+	height: 200px;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+	float: left;
+	padding: 10px;
+	width: 45%
+}
+/* Left and right column */
+.column.side {
+	width: 60%;
+	height: 700px;
+	background-image: url("../images/text_window.jpg");
+	background-repeat: no-repeat;
+}
+/* Middle column */
+.column.middle {
+	width: 40%;
+}
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	z-index: -3;
+}
+/* Style the footer */
+.footer {
+	padding: 10px;
+	text-align: center;
+	z-index: -3;
+}
+img.a {
+	/*X windows clock*/
+	vertical-align: text-top;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+img.c {
+	/* style manager*/
+	vertical-align: text-top;
+	position: fixed;
+	left: 120px;
+	top: 0px;
+}
+img.b {
+	/* application manager */
+	vertical-align: text-top;
+	float: right;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	opacity: 0.9;
+	z-index: 3;
+}
+img.d {
+	/* calculator */
+	position: absolute;
+	right: 140px;
+	top: 300px;
+	opacity: 0.9;
+	z-index: 3;
+}
+.text_column {
+	width: 582px;
+	height: 400px;
+	overflow: scroll;
+	text-align: left;
+	font-weight: lighter;
+	line-height: 25px;
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #000000;
+}
+/* Image popup code */
+popup {
+	width: 600px;
+	margin: auto;
+	text-align: center
+}
+
+.popup img {
+	width: 20px;
+	height: 20px;
+	cursor: pointer
+}
+.show {
+	z-index: 999;
+	display: none;
+}
+.show .overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.66);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.show .img-show {
+	
+	width: 700px;
+	height: 700px;
+	
+	background: #FFF;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden
+}
+.img-show span {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 99;
+	cursor: pointer;
+}
+.img-show img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* End popups taken from codepen piece */
+
+/* Popups taken from the W3C TEXT piece */
+	/* Popup container - can be anything you want */
+.popup {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/* The actual popup */
+.popup .popuptext {
+	font-family: Futura, Times, sans-serif;
+	font-size: 11px;
+	visibility: hidden;
+	width: 160px;
+	background-color: #000000;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 8px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -80px;
+}
+/* Popup arrow */
+.popup .popuptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+/* Toggle this class - hide and show the popup */
+.popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+/* Link class in the blue of early Mosaic browser */
+olink {
+	color: blue;
+}
+/*Essay title*/
+.title {
+	text-align: center;
+	font-size: 14px;
+}
+	
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+ from {
+opacity: 0;
+}
+ to {
+opacity: 1;
+}
+}
+ @keyframes fadeIn {
+ from {
+opacity: 0;
+}
+ to {
+opacity:1;
+}
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+.column.side, .column.middle {
+	width: 100%;
+}
+}

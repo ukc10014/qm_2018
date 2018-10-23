@@ -25,9 +25,9 @@ canvas.backg {
 
 canvas.w {
 	position: absolute;
-	left: 500px;
+	left: 600px;
 	top: 200px;
-	z-index: 0;	
+	z-index: 1;	
 }
 
 iframe.vimvid {
@@ -52,7 +52,7 @@ iframe.vimvid {
 }
 /* Left and right column */
 .column.side {
-	width: 60%;
+	width: 600px;
 	height: 700px;
 	background-image: url("../images/text_window.jpg");
 	background-repeat: no-repeat;
@@ -106,6 +106,20 @@ img.d {
 	opacity: 0.9;
 	z-index: 3;
 }
+
+@media only screen and (max-width: 1000px) {
+	img.d {visibility: hidden;}
+	img.b {visibility: hidden;}
+	iframe.vimvid {
+		left: 20px;
+		top: 150px;
+	}
+	canvas.w {
+		left: 20px;
+		top: 250px;
+	}
+}
+
 .text_column {
 	width: 582px;
 	height: 400px;
@@ -222,6 +236,7 @@ olink {
 }
 /*Essay title*/
 .title {
+	position: absolute;
 	text-align: center;
 	font-size: 14px;
 }
